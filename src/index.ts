@@ -29,7 +29,7 @@ function templateFile(templatePath, replacements: { [key: string]: string }, san
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static("public"));
+app.use(express.static("public", { maxAge: "1h" }));
 
 app.get("/forms/:formID([a-zA-Z0-9]{8})", async(request, response, next) => {
 	const formID = request.params.formID;

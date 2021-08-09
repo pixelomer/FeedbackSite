@@ -6,7 +6,7 @@ const localDatabase: { [key: string]: Form } = {
 		description: "Thank you for being a member of Litcord. Do you have any complaints? How can we improve Litcord?",
 		placeholder: "Type your feedback here",
 		responseTitle: "Feedback discarded",
-		response: "Your opinions are invalid."
+		response: "Your opinion is invalid."
 	},
 	"example0": {
 		title: "SendFeedback",

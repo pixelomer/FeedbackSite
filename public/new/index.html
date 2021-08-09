@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>New form</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="og:title" content="New feedback form">
+		<meta property="og:description" content="Create your own SendFeedback form.">
+		<meta name="description" content="Create your own SendFeedback form.">
+		<meta name="robots" content="noindex">
+		<link rel="stylesheet" href="/style.css">
+		<style>
+			textarea {
+				margin-bottom: 7px;
+			}
+			input[name=title] {
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h2>New Form</h2>
+			<form method="POST">
+				<input type="text" id="title" name="title" placeholder="Form title">
+				<input type="text" id="placeholder" name="placeholder" placeholder="Feedback placeholder">
+				<textarea spellcheck="false" id="form-description" name="description" placeholder="Form description"></textarea>
+				<input type="text" id="response-title" name="responseTitle" placeholder="Response title">
+				<textarea spellcheck="false" id="response-description" name="response" placeholder="Response description"></textarea>
+				<div class="submit button"><a href="javascript:submitForm()">Create</a></div>
+			</form>
+		</div>
+		<script type="text/javascript">
+			function getValue(id) {
+				const element = document.getElementById(id);
+				return element.value;
+			}
+
+			function submitForm() {
+				var form = document.getElementsByTagName('form')[0];
+				if (!getValue("title")) {
+					alert("Form title cannot be empty.");
+					return;
+				}
+				if (!getValue("form-description")) {
+					alert("Form description cannot be empty.");
+					return;
+				}
+				form.submit();
+			}
+		</script>
+	</body>
+</html>
